@@ -1,0 +1,19 @@
+[workspace]
+name = "datalad-sidecar-log-reproducer"
+version = "0.1.0"
+channels = ["conda-forge"]
+platforms = [
+  { platform = "linux-64", glibc = "2.34" },
+  { platform = "linux-aarch64", glibc = "2.34" },
+]
+
+[tasks]
+reproduce = "sh reproduce.sh"
+
+[dependencies]
+python = "3.12.*"
+git = "*"
+
+[pypi-dependencies]
+datalad = "==1.7.2"
+git-annex = "*"
